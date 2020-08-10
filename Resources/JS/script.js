@@ -83,19 +83,19 @@ doorImage3.onclick = () => {
 }
 
 startButton.onclick = () => {
-  startRound();
+    if(!currentlyPlaying) {
+        startRound();
+    }
 }
 
 const startRound = () => {
-  if(!currentlyPlaying) {
     doorImage1.src = closedDoorPath;
-  doorImage2.src = closedDoorPath;
-  doorImage3.src = closedDoorPath;
-  numClosedDoors = 3;
-  currentlyPlaying = true;
-  startButton.innerHTML = 'Good luck!';
-  randomChoreDoorGenerator();
-  }
+    doorImage2.src = closedDoorPath;
+    doorImage3.src = closedDoorPath;
+    numClosedDoors = 3;
+    currentlyPlaying = true;
+    startButton.innerHTML = 'Good luck!';
+    randomChoreDoorGenerator();
 };
 
 //function gameover
